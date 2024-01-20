@@ -6,7 +6,7 @@ We know that the queuing delay for the first packet is 0.
 
 For the second packet, it's $\frac{L}{R}$ because of the first packet.
 
-For the third packet, it's $ 2 * \frac{L}{R}$ because of the first and second packet.
+For the third packet, it's $2 * \frac{L}{R}$ because of the first and second packet.
 
 For the fourth packet, it's $3 * \frac{L}{R}$ because of the first, second, and third packet.
 
