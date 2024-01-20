@@ -1,3 +1,4 @@
+# Q9 
 Suppose N packets arrive simultaneously at a link at which no packets are currently being transmitted or queued. Each packet is of length L and the link has transmission rate R. What is the average queuing delay for the N packets? Simplify your answer. 
 
 
