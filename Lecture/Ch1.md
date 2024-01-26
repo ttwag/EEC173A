@@ -129,3 +129,11 @@ $d_{total} = (Number \space of \space Packet - 1) * d_{trans} + (Number \space o
 * Queuing Delay Formula: $E(X) = \frac{La/R}{1- La/R}$, where a is the arrival rate, R/L is the departure rate, and $La/R$ is the traffic intensity. As $La/R$ approaches 1, the traffic intensity becomes greater.
 * When the buffer is full, a packet is dropped.
 * Throughput: rate (bits/time unit)
+
+## The Network Layer
+
+Abstract each layer by providing an interface to work with the layer.
+
+![Figure8](../image/Figure8.png)
+
+A Router looks at the IP address in the network layer. A switch only looks at the link and physical layer.
