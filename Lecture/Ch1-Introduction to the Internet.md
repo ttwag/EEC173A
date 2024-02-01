@@ -2,7 +2,7 @@
 
 The Internet is a computer network that interconnects billions of computing devices across pyhsical locations.
 
-![Figure1](../image/Figure1.png)
+![Figure1](./image/Figure1.png)
 
 End systems are connected by a network of
 * **Communication links (coaxial cable, optical fiber)**
@@ -25,7 +25,7 @@ The end system also needs a **socket interface** that specifies how a program ru
 ### Access Networks
 Access Network physically connects an end system to the first router on a path from the end system to any other end system.
 
-![Figure2](../image/Figure2.png)
+![Figure2](./image/Figure2.png)
 
 **Home Internet Access through Telephone Line**
 * Also called DSL Internet Access.
@@ -42,12 +42,12 @@ Access Network physically connects an end system to the first router on a path f
 * It's a **Shared Broadcast Medium**. If several users simultaneously download a video, the actual rate will be slower than the aggregate cable down. stream rate.
 * Cable modems divide the HFC network into a downstream and an upstream channel.
 * **Cable Modem Termination System (CMTS)** turns the analog signal from the cable modems in downstream homes back into digital format.
-![Figure4](../image/Figure4.png)
+![Figure4](./image/Figure4.png)
 
 **Home Internet Access through Fiber Cable**
 * Also called **fiber to the home (FTTH)**
 
-![Figure5](../image/Figure5.png)
+![Figure5](./image/Figure5.png)
 
 **Transmission Medium**
 * Twisted-Pair Copper Wire
@@ -92,7 +92,7 @@ Access Network physically connects an end system to the first router on a path f
 **Multiplexing in Circuit-Switched Networks**
 A circuit in a link is implemented with either FDM or TDM.
 
-![Figure7](../image/Figure7.png)
+![Figure7](./image/Figure7.png)
 
 * **Frequency-Division Multiplexing (FDM)**: the frequency spectrum of a link is divided up among the connections established across the link, and the width of the band is **bandwidth**.
 * **Time-Division Multiplexing (TDM)**: for a TDM link, time is divided into frames of fixed duration, and each frame is divided into a fixed number of time slots. When the network establishes a connection across a link, the network dedicates one time slot in every frame to this connection.
@@ -134,6 +134,6 @@ $d_{total} = (Number \space of \space Packet - 1) * d_{trans} + (Number \space o
 
 Abstract each layer by providing an interface to work with the layer.
 
-![Figure8](../image/Figure8.png)
+![Figure8](./image/Figure8.png)
 
 A Router looks at the IP address in the network layer. A switch only looks at the link and physical layer.
