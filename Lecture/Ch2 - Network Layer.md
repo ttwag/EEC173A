@@ -116,6 +116,11 @@ No guarantees on:
 * A **Subnet** is a part of a larger network. 
 * IP addressing assigns an address to this subnet: 223.1.1.0/24, the /24 is known as the **subnet mask**, which indicates that the leftmost 24 bits of the 32-bit address define the subnet address.
 
+**CIDR Notation**
+* Stands for classless interdomain routing.
+* Address format: a.b.c.d/x where x is #bits in the subnet portion of the address.
+
+
 ### DHCP: Dynamic Host Configuration Protocol
 * Allow the host to dynamically obtain its IP address from the network server when it joins the network.
 * Often built into the router to assign private IP addresses.
