@@ -153,3 +153,116 @@ The IPv6 packet is sent as the data inside an IPv4 packet from B to E.
 **Flow Table Example**
 
 ![Figure20](./image/Figure20.png)
+
+## The Control Plane
+### Routing Protocols
+**Goal:** determine a good path from sending hosts to receiving hosts through a network of routers.
+
+**Good Path:** least cost, fastest, least congested.
+
+**Cost** could be inversely related to bandwidth. **c(x, x') = cost of link (x, x')**
+
+EX: c(w,z) = 5
+
+![Figure21](./image/Figure21.png)
+
+### Routing Algorithm Classification
+1. Global
+    * All routers have complete topology, link cost info.
+    * **Link State Algorithm**.
+2. Decentralized
+    * Router knows physically connected neighbors, link costs to neighbors.
+    * Exchange info with neighbors.
+    * **Distance Vector Algorithm**
+3. Static
+    * Routes change slowly over time.
+4. Dynamic
+    * Routes change more quickly.
+    * Periodic update.
+
+### Link-State Routing Algorithm
+* Dijkstra's Algorithm
+    * Net topology, link costs are known to all nodes.
+    * Computes least cost paths from one node to all other nodes.
+* Notation
+    * c(x, y): link cost from node x to y; c(j, k) = $\infty$ if j and k are not direct neighbors.
+    * D(v): the current value of the cost of the path from source to destination, v.
+    * p(v): predecessor node along the path from source to v.
+    * N': a set of nodes whose least cost path definitely known.
+* Time Complexity: O(n^2)
+* Oscillation possible.
+
+### Distance Vector Algorithm
+* Bellman-Ford Equation (Dynamic Programming)
+* From time-to-time, each node sends its own distance vector estimate to neighbors.
+* When x receives a new DV estimate from a neighbor, it updates its own DV using the B-D equation.
+* When link cost decreases, the news travels **fast** to other nodes.
+* When **link cost increases**, the news travels **slow** to other nodes.
+
+
+Let $d_x(y)$ = cost of least-cost path from x 
+to y, then 
+$$d_x(y) = min_v\{c(x, y) + d_v(y)\}$$
+
+![Figure22](./image/Figure22.png)
+
+### Comparison of Link-State and Distance Vector Algorithms
+
+* LS:
+    1. Node can advertise incorrect link cost.
+    2. Each node computes only its own table.
+    3. May have oscillations.
+* DV:
+    1. DV node can advertise incorrect path cost.
+    2. Error propagates through the network.
+    3. Count-to-infinity problems.
+
+### Hierarchical Routing
+* Aggregate routers into regions, **"autonomous systems (AS)"**
+* Routers in the same AS run the same routing protocol called **intra-AS routing protocol**.
+* **Inter-AS Routing Protocol** routes across different AS.
+* **Gateway Router**:** at the edge of its own AS and has a link to the router in another AS.
+
+**EX:** AS1 learns via **inter-AS protocol** that subnet x is reachable via AS3, but not via AS2. The **Inter-AS Protocol** propagates reachability to all internal routers.
+
+### Intra-AS Routing
+* RIP: Routing Information Protocol
+* EIGRP: Enhanced Interior Gateway Routing Protocol
+* **OSPF**: Open Shortest Path First
+    * Link-State routing.
+    * Advertisements flooded to **entire** AS.
+### Inter-AS Routing
+* **BGP (Border Gateway Protocol)**
+    * determine good routes to other networks based on reachability information and policy.
+    * **eBGP:** obtain subnet reachability information from neighboring ASs.
+    * **iBGP:** propagate reachability information to all AS-internal routers.
+### ICMP
+* Used by hosts and routers to communicate network-level information.
+* Network layer above IP.
+
+### Components of Network Management
+
+![Figure23](./image/Figure23.png)
+
+### How Network Operator Manages the Network
+* CLI: operator issues scripts directly to individual devices via ssh.
+* SNMP/MIB: operator sets device data using Simple Network Management Protocol (**SNMP**)
+* NETCONF/YANG: multi-device configuration management.
+
+### Software Defined Networking (SDN)
+* Internet network layer historically implemented via a distributed, per-router control approach.
+* In SDN, the remote controller computes and installs forwarding tables in routers.
+* Easier network management that avoids router misconfigurations.
+* The central manager is called the **controller**, which uses the **OpenFlow Protocol** to control the switches (router).
+
+![Figure24](./image/Figure24.png)
+
+**Controller-to-Switch Message**
+* Configuration: allows the controller to query and set switch parameters.
+* Modify-State: used by the controller to add/remove/modify the switch's flow table entry, and to set switch port property.
+* Read-State: used by the controller to collect statistics and counter values from the switch flow table and port. 
+* Send-Packet: used by the controller to send a specific packet out of the switch's port.
+* Flow-Removed: inform the controller that a flow table entry has been removed
+* Port-Status: inform the controller of change in switch's port.
+
+
