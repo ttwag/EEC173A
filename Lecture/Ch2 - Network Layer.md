@@ -167,11 +167,11 @@ EX: c(w,z) = 5
 ![Figure21](./image/Figure21.png)
 
 ### Routing Algorithm Classification
-1. Global
-    * All routers have complete topology, link cost info.
+1. Centralized
+    * All routers have complete topology and link cost info.
     * **Link State Algorithm**.
 2. Decentralized
-    * Router knows physically connected neighbors, link costs to neighbors.
+    * Router knows physically connected neighbors, and links costs to neighbors.
     * Exchange info with neighbors.
     * **Distance Vector Algorithm**
 3. Static
@@ -182,7 +182,7 @@ EX: c(w,z) = 5
 
 ### Link-State Routing Algorithm
 * Dijkstra's Algorithm
-    * Net topology, link costs are known to all nodes.
+    * Net topology and link costs are known to all nodes.
     * Computes least cost paths from one node to all other nodes.
 * Notation
     * c(x, y): link cost from node x to y; c(j, k) = $\infty$ if j and k are not direct neighbors.
@@ -236,6 +236,8 @@ $$d_x(y) = min_v\{c(x, y) + d_v(y)\}$$
     * determine good routes to other networks based on reachability information and policy.
     * **eBGP:** obtain subnet reachability information from neighboring ASs.
     * **iBGP:** propagate reachability information to all AS-internal routers.
+
+EX: When there is a new subnet x connected to AS3, AS3's gateway router will broadcast this to other AS via eBGP. The other AS's gateway router will then broadcast to their intra-AS routers through iBGP.
 ### ICMP
 * Used by hosts and routers to communicate network-level information.
 * Network layer above IP.
@@ -254,6 +256,11 @@ $$d_x(y) = min_v\{c(x, y) + d_v(y)\}$$
 * In SDN, the remote controller computes and installs forwarding tables in routers.
 * Easier network management that avoids router misconfigurations.
 * The central manager is called the **controller**, which uses the **OpenFlow Protocol** to control the switches (router).
+
+**Characteristics**:
+* Flow-based Forwarding
+* Separation of Data and Control Plane
+* A programmable network
 
 ![Figure24](./image/Figure24.png)
 
