@@ -45,3 +45,43 @@ A **Web cache**, also called a **proxy server**, is a network entity that satisf
 HTTP1 causes **Head of Line (HOL) blocking**, which happens when a web page sends a large video clip and many small objects. Using a single TCP connection, the video clip will take a long time to pass through the link, while the small objects are delayed as they wait behind the video clip.
 
 HTTP/2 breaks each message into small frames, and after sending one frame from the video clip, the first frames of each of the small objects are sent.
+
+## Electronic Mail
+
+
+Major components:
+
+1. **User agents**
+2. **Mail servers**
+3. **Simple Mail Transfer Protocol (SMTP):**
+
+When the sender finishes the message, the user agent sends the message to the corresponding mail server, where the message is placed in the mail server's outgoing message queue.
+
+When the receiver wants to read a message, the user agent retrieves the message from the mailbox in the corresponding server.
+
+## DNS: Domain Name System
+
+* Hostname to IP address translation
+* Load distribution: having multiple IP addresses corresponding to one hostname.
+
+**Implementation**
+* Distributed database implemented in hierarchy of many name servers.
+* Application-Layer Protocol host, routers, name servers to communicate to resolve address/name translation.
+* Each ISP has one DNS name server.
+ 
+**DNS Records**
+
+Resource records (RR) format: (name, value, type, ttl)
+
+* type=A
+    * **name** is hostname
+    * **value** is an IP address
+* type=CNAME
+    * **name** is an alias for the real name.
+    * EX: www.ibm.com is actually sereast.backup2.ibm.com
+    * **value** is the real name.
+* type=NS
+    * **name** is the domain
+    * **value** is the hostname of the authoritative name server for this domain.
+* type=MX
+    * **value** is the name of the mail server associated with the **name**
