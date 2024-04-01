@@ -8,10 +8,10 @@ This course covers how internet works and the 4 network layer.
 **EEC173A**
 
 * [Introduction to the Internet](./Lecture/Ch1-Introduction_to_the_Internet.md)
-* [Network Layer](./Lecture/Ch2_Network_Layer.md)
-* [Transport Layer](./Lecture/Ch3_Transport_Layer.md)
-* [Application Layer](./Lecture/Ch4_Application_Layer.md)
-* [Link Layer](./Lecture/Ch5_Link_Layer.md)
+* [Network Layer](./Lecture/Ch2-Network_Layer.md)
+* [Transport Layer](./Lecture/Ch3-Transport_Layer.md)
+* [Application Layer](./Lecture/Ch4-Application_Layer.md)
+* [Link Layer](./Lecture/Ch5-Link_Layer.md)
 
 **EEC130B (Currently Updating)**
 
