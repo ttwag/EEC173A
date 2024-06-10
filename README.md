@@ -13,6 +13,4 @@ This course covers how internet works and the 4 network layer.
 * [Application Layer](./Lecture/Ch4-Application_Layer.md)
 * [Link Layer](./Lecture/Ch5-Link_Layer.md)
 
-**EEC130B (Currently Updating)**
-
 You can see the detailed course description in [https://ece.ucdavis.edu/course-catalog](https://ece.ucdavis.edu/course-catalog)
